@@ -1,0 +1,36 @@
+{
+  "name": "yesnowtf",
+  "version": "0.0.0",
+  "description": "A yesno.wtf API library for Node.js",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "q": "^1.1.2"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "chai-as-promised": "^4.1.1",
+    "mocha": "^2.1.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/troutowicz/node-yesnowtf.git"
+  },
+  "keywords": [
+    "decide",
+    "decision",
+    "yesno",
+    "gif"
+  ],
+  "author": "Tim Routowicz <troutowicz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/troutowicz/node-yesnowtf/issues"
+  },
+  "homepage": "https://github.com/troutowicz/node-yesnowtf"
+}
