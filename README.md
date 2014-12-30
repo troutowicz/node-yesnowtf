@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/troutowicz/node-yesnowtf.svg?branch=master)](https://travis-ci.org/troutowicz/node-yesnowtf) [![npm version](https://badge.fury.io/js/yesnowtf.svg)](http://badge.fury.io/js/yesnowtf)
+
 node-yesnowtf
 =============
 
