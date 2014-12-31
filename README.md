@@ -11,7 +11,7 @@ A yesno.wtf API library for Node.js.
 
 ## Module Usage
 
-This module supports promises as well as the usual callbacks.
+This module provides the option to use promises instead of callbacks.
 
 ```javascript
 var yesnowtf = require('yesnowtf');
@@ -21,7 +21,7 @@ var decision;
 // make a decision
 yesnowtf.decide(decision)
   .then(function (data) {
-    console.log(JSON.stringify(data));
+    console.log(data);
   })
   .catch(function (err) {
     console.error(err.message);
@@ -33,8 +33,12 @@ yesnowtf.decide(decision, function (err, data) {
     return;
   }
 
-  console.log(JSON.stringify(data));
+  console.log(data);
 });
 ```
 
-    {"answer":"maybe","forced":false,"image":"http://yesno.wtf/assets/maybe/2-adc5f184452e691c3484d4266776ed3d.gif"}
+```javascript
+{ answer: 'maybe',
+  forced: false,
+  image: 'http://yesno.wtf/assets/maybe/2-adc5f184452e691c3484d4266776ed3d.gif' }
+```
