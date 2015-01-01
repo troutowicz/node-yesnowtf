@@ -1,28 +1,19 @@
 'use strict';
 
 var http = require('q-io/http'),
-    q = require('q'),
     apiEndpoint = 'http://yesno.wtf/api';
 
 function decide(decision, cb) {
-  var deferred = q.defer(),
-      url = apiEndpoint + (decision ? '?force=' + decision : '');
+  var url = apiEndpoint + (decision ? '?force=' + decision : '');
 
-  http.read(url).then(
-    function (data) {
+  return http.read(url)
+    .then(function (body) {
       try {
-        var result = JSON.parse(data);
-        deferred.resolve(result);
+        return JSON.parse(body);
       } catch (e) {
-        deferred.reject(new Error('JSON parse failed'));
+        throw new SyntaxError('JSON parse failed');
       }
-    },
-    function (err) {
-      deferred.reject(err);
-    }
-  );
-
-  return deferred.promise.nodeify(cb);
+    }).nodeify(cb);
 }
 
 module.exports.decide = decide;
